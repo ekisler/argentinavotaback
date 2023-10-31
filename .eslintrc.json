@@ -1,0 +1,20 @@
+{
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true
+    },
+    "extends": "airbnb/base",
+    "settings": {
+        "import/resolve": {
+            "node": {
+                "moduleDirectory": ["src", "node_module"]
+            }
+        }
+    },
+    "rules": {
+        "no-underscode-dangle": 0,
+        "no-params-reassign": 0,
+        "import/no-unresolved": 0
+    }
+}
