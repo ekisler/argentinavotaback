@@ -10,7 +10,7 @@ cloudinaryConfig(
 );
 
 const postImage = async (req, res, next) => {
-  const { imgUrl } = req.body;
+  const { imgUrl, name, tableNumber, schoolName } = req.body;
 
   try {
     const result = await cloudinary.uploader.upload(imgUrl, {
@@ -18,6 +18,9 @@ const postImage = async (req, res, next) => {
     });
     const image = new Image({
       imgUrl: result.secure_url,
+      name,
+      tableNumber,
+      schoolName,
     });
     await image.save();
 
